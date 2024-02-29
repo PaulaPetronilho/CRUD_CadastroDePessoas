@@ -24,4 +24,37 @@ Este é um projeto exemplar que demonstra a implementação de um aplicativo CRU
 - **Views, Controllers, Models**: Divisão clara das responsabilidades entre as diferentes camadas da aplicação, promovendo a modularidade e a reutilização de código.
 - **Frontend Separado do Backend**: Separação das responsabilidades entre o frontend (HTML, CSS, JavaScript) e o backend (C# ASP.NET MVC), permitindo o desenvolvimento paralelo e a colaboração entre equipes.
 
+## Script de Criação da Tabela no SQL Server
+
+Segue abaixo uma parte do script de criação da tabela no banco de dados SQL Server para o cadastro de Pessoa Física:
+```sql
+-- Cria o banco de dados Pessoa
+CREATE DATABASE Pessoa;
+GO
+
+-- Altera o contexto para o banco de dados Pessoa
+USE Pessoa;
+GO
+
+-- CREATE da tabela 
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[PessoaFisicaModels](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[NomeCompleto] [nvarchar](max) NULL,
+	[DataNascimento] [datetime] NOT NULL,
+	[ValorRenda] [nvarchar](max) NULL,
+	[CPF] [nvarchar](max) NULL,
+ CONSTRAINT [PK_dbo.PessoaFisicaModels] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
 Este projeto exemplar representa uma implementação robusta e eficiente de um aplicativo CRUD de Pessoa Física, destacando-se por sua usabilidade, organização e uso de tecnologias modernas, incluindo a integração de APIs para uma arquitetura mais flexível e escalável.
