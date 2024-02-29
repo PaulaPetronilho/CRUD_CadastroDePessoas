@@ -24,6 +24,8 @@ Este é um projeto exemplar que demonstra a implementação de um aplicativo CRU
 - **Views, Controllers, Models**: Divisão clara das responsabilidades entre as diferentes camadas da aplicação, promovendo a modularidade e a reutilização de código.
 - **Frontend Separado do Backend**: Separação das responsabilidades entre o frontend (HTML, CSS, JavaScript) e o backend (C# ASP.NET MVC), permitindo o desenvolvimento paralelo e a colaboração entre equipes.
 
+Este projeto exemplar representa uma implementação robusta e eficiente de um aplicativo CRUD de Pessoa Física, destacando-se por sua usabilidade, organização e uso de tecnologias modernas, incluindo a integração de APIs para uma arquitetura mais flexível e escalável.
+
 ## Script de Criação da Tabela no SQL Server
 
 Segue abaixo uma parte do script de criação da tabela no banco de dados SQL Server para o cadastro de Pessoa Física:
@@ -55,6 +57,3 @@ CREATE TABLE [dbo].[PessoaFisicaModels](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-
-
-Este projeto exemplar representa uma implementação robusta e eficiente de um aplicativo CRUD de Pessoa Física, destacando-se por sua usabilidade, organização e uso de tecnologias modernas, incluindo a integração de APIs para uma arquitetura mais flexível e escalável.
