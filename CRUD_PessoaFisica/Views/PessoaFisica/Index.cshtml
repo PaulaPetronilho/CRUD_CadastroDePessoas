@@ -1,0 +1,73 @@
+﻿@model IEnumerable<CRUD_PessoaFisica.Models.PessoaFisicaModel>
+
+@{
+    ViewBag.Title = "Principal";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="~/Scripts/PessoaStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Criar Novo Perfil", "Create", "PessoaFisica", null, new { @class = "btn btn-primary btn-edit" })
+    </p>
+    <div>
+        <div class="tabela-scroll">
+            <table class="table table-hover">
+                <tr class="table-active  tabela-cabecalho">
+                    <th style="text-align: center;">
+                        @Html.DisplayNameFor(model => model.NomeCompleto)
+                    </th>
+                    <th style="text-align: center;">
+                        @Html.DisplayNameFor(model => model.DataNascimento)
+                    </th>
+                    <th style="text-align: center;">
+                        @Html.DisplayNameFor(model => model.ValorRenda)
+                    </th>
+                    <th style="text-align: center;">
+                        @Html.DisplayNameFor(model => model.CPF)
+                    </th>
+                    <th>&nbsp;</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="linhasDaTabelaPrincipal">
+                            @Html.DisplayFor(modelItem => item.NomeCompleto)
+                        </td>
+                        <td class="linhasDaTabelaPrincipal">
+                            @if (item.DataNascimento != null)
+                            {
+                                @item.DataNascimento.ToString("dd/MM/yyyy")
+                            }
+                        </td>
+                        <td class="linhasDaTabelaPrincipal">
+                            @string.Format("R$ {0:#,##0.00}", item.ValorRenda)
+                        </td>
+                        <td class="linhasDaTabelaPrincipal">
+                            @Html.DisplayFor(modelItem => item.CPF)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editar", "Edit", "PessoaFisica", new { id = item.Id }, new { @class = "links btn btn-primary details-button", @role = "button", @data_url = Url.Action("Edit", "PessoaFisica", new { id = item.Id }), @style = "text-decoration: none; color: white;" })
+                            @Html.ActionLink("Detalhes", "Details", "PessoaFisica", new { id = item.Id }, new { @class = "links btn btn-primary details-button", @role = "button", @data_url = Url.Action("Details", "PessoaFisica", new { id = item.Id }), @style = "text-decoration: none; color: white;" })
+                            @Html.ActionLink("Delete", "Delete", "PessoaFisica", new { id = item.Id }, new { @class = "links btn btn-primary details-button", @role = "button", @data_url = Url.Action("Delete", "PessoaFisica", new { id = item.Id }), @style = "text-decoration: none; color: white;" })
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+
+    @section Scripts {
+        <script src="~/Scripts/jquery-3.4.1.js"></script>
+       
+        @Scripts.Render("~/Scripts/site.js")
+    }
+</body>
+</html>

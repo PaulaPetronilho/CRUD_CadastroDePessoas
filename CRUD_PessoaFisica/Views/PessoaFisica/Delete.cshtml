@@ -1,0 +1,91 @@
+﻿@model CRUD_PessoaFisica.Models.PessoaFisicaModel
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de excluir o perfil</title>
+    <link href="~/Scripts/PessoaStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        @Html.AntiForgeryToken()
+        <div>
+            <h2>Excluir</h2>
+            <hr />
+            <h5>Tem certeza de que deseja excluir isto?</h5>
+            <br />
+            <div class="topoTabela">
+                <div class="form-group">
+                    <div class="row g-3 align-items-center">
+                        <div class="col-2 linha-excluir">
+                            @Html.DisplayNameFor(model => model.NomeCompleto)
+                        </div>
+                        <div class="col-auto linha-excluir">
+                            @Html.DisplayFor(model => model.NomeCompleto)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row g-3 align-items-center">
+                        <div class="col-2 linha-excluir">
+                            @Html.DisplayNameFor(model => model.DataNascimento)
+                        </div>
+                        <div class="col-auto linha-excluir">
+                            @if (@Model.DataNascimento != null)
+                            {
+                                @Model.DataNascimento.ToString("dd/MM/yyyy")
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row g-3 align-items-center">
+                        <div class="col-2 linha-excluir">
+                            @Html.DisplayNameFor(model => model.ValorRenda)
+                        </div>
+                        <div class="col-auto linha-excluir">
+                            @Html.DisplayFor(model => model.ValorRenda)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row g-3 align-items-center">
+                        <div class="col-2 linha-excluir">
+                            @Html.DisplayNameFor(model => model.CPF)
+                        </div>
+                        <div class="col-auto linha-excluir">
+                            @Html.DisplayFor(model => model.CPF)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="botao-bottom">
+                @using (Html.BeginForm("Delete", "PessoaFisica", new { id = Model.ID }, FormMethod.Post, new { onsubmit = "return confirmExclusao();" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group">
+                        <div class="row g-3 align-items-center" style="padding-left: 5%">
+                            <div class="col-auto">
+                                @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-primary btn-edit" })
+                            </div>
+                            <div class="col-auto">
+                                <input type="submit" value="Excluir" class="btn btn-danger btn-edit" />
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    @section Scripts {
+        <script src="~/Scripts/site.js"></script>
+    }
+</body>
+</html>

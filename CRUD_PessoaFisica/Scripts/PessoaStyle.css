@@ -1,0 +1,195 @@
+﻿* {
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+input {
+    font-family: var(--bs-body-font-family);
+    padding: 10px 10px 5px 5px ;
+    display: block;
+    width: 280px;
+    border: none;
+    border-bottom: 1px solid #757575;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+    position: relative;
+    display: block;
+    width: 280px;
+}
+
+.bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #5264AE;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+.tabela-scroll {
+    max-height: 500px; /* Defina a altura máxima da tabela */
+    overflow: auto; /* Adiciona uma barra de rolagem quando necessário */
+    overflow: overlay;
+    display: block;
+}
+
+.tabela-cabecalho {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+label {
+    padding: 10px 0px 5px 0px;
+}
+
+.col-2 {
+    padding-left: 5%;
+    font-weight: bold;
+}
+
+.linhasDaTabelaPrincipal {
+    padding: 14px 0 !important;
+    text-align: center;
+}
+
+.topoTabela {
+    padding-left: 5%;
+}
+
+.botao-bottom{
+    width: auto;
+    padding: 50px;      
+}
+
+.btn-edit{
+    width: 200px;
+}
+
+.linha-excluir {
+    margin: 15px 0px !important;
+}
+
+.tabela-scroll {
+    max-height: 550px; /* Defina a altura máxima do corpo da tabela */
+    overflow: auto; /* Adiciona uma barra de rolagem quando necessário */
+}
+
+.tabela-cabecalho {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.fa {
+    transform: none !important;
+}
+
+/* Estilo da barra de rolagem */
+/* WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+    height: 8px; /* Altura da barra de rolagem */
+}
+
+/* Estilo do polegar da barra de rolagem */
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5); /* Cor do polegar */
+    border-radius: 4px; /* Raio de borda do polegar */
+}
+
+/* Ocultar as setas de rolagem */
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+/* Ocultar os botões de rolagem */
+::-webkit-scrollbar-track {
+    background-color: transparent; /* Cor de fundo da barra de rolagem */
+}
+
+/* Estilo quando a barra de rolagem é hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Cor do polegar quando hover */
+}
