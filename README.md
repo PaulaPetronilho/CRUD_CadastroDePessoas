@@ -1,6 +1,8 @@
 # Aplicativo CRUD de Pessoa Física
 Este é um projeto exemplar que demonstra a implementação de um aplicativo CRUD (Create, Read, Update, Delete) para gerenciamento de perfis de Pessoa Física. Desenvolvido com tecnologias modernas e uma arquitetura bem definida, apresenta diversos pontos positivos que o tornam uma escolha sólida para o desenvolvimento de sistemas similares. Abaixo estão os principais aspectos positivos, tecnologias e arquitetura utilizadas:
 
+Este projeto exemplar representa uma implementação robusta e eficiente de um aplicativo CRUD de Pessoa Física, destacando-se por sua usabilidade, organização e uso de tecnologias modernas, incluindo a integração de APIs para uma arquitetura mais flexível e escalável.
+
 ## Pontos Positivos
 - **Facilidade de Uso**: A interface do usuário é amigável e intuitiva, permitindo aos usuários realizar operações de CRUD de forma eficiente.
 - **Validação de CPF**: Implementação de validação de CPF para garantir que apenas CPFs válidos sejam inseridos no sistema.
@@ -23,8 +25,6 @@ Este é um projeto exemplar que demonstra a implementação de um aplicativo CRU
 - **DbContext**: Uso do DbContext do Entity Framework para gerenciar a conexão com o banco de dados e as operações CRUD.
 - **Views, Controllers, Models**: Divisão clara das responsabilidades entre as diferentes camadas da aplicação, promovendo a modularidade e a reutilização de código.
 - **Frontend Separado do Backend**: Separação das responsabilidades entre o frontend (HTML, CSS, JavaScript) e o backend (C# ASP.NET MVC), permitindo o desenvolvimento paralelo e a colaboração entre equipes.
-
-Este projeto exemplar representa uma implementação robusta e eficiente de um aplicativo CRUD de Pessoa Física, destacando-se por sua usabilidade, organização e uso de tecnologias modernas, incluindo a integração de APIs para uma arquitetura mais flexível e escalável.
 
 ## Script de Criação da Tabela no SQL Server
 
